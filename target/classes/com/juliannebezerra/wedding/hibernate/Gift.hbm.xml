@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 20 Julai 2010 11:40:18 AM by Hibernate Tools 3.2.5.Beta -->
+<hibernate-mapping>
+    <class name="com.juliannebezerra.wedding.model.Gift" 
+		table="gift" catalog="wedding">
+        <id name="id" type="java.lang.Long">
+            <column name="GIFT_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" length="45" not-null="true" />
+        </property>
+        <property name="price" type="java.lang.Long">
+            <column name="PRICE" />
+        </property>
+        <property name="disp" type="int">
+            <column name="DISP" />
+        </property>
+    </class>
+</hibernate-mapping>
