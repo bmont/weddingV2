@@ -24,6 +24,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 		<list>
           <value>com/juliannebezerra/wedding/hibernate/Gift.hbm.xml</value>
           <value>com/juliannebezerra/wedding/hibernate/User.hbm.xml</value>
+          <value>com/juliannebezerra/wedding/hibernate/Question.hbm.xml</value>
 		</list>
     </property>	
  

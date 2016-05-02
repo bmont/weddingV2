@@ -10,5 +10,6 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	<!-- Beans Declaration -->
 	<import resource="com/juliannebezerra/wedding/spring/UserBean.xml"/>
 	<import resource="com/juliannebezerra/wedding/spring/GiftBean.xml"/>
+	<import resource="com/juliannebezerra/wedding/spring/QuestionBean.xml"/>
  
 </beans>
