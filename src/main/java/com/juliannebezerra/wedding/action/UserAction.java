@@ -11,6 +11,7 @@ public class UserAction implements ModelDriven<User>{
 	
 	User user = new User();
 	List<User> userList = new ArrayList<User>();
+	int convidado = 0;
 
 	UserBo userBo;
 	
@@ -29,6 +30,15 @@ public class UserAction implements ModelDriven<User>{
 	public void setUserList(List<User> userList) {
 		this.userList = userList;
 	}
+	
+	public int getConvidado() {
+		return convidado;
+	}
+
+	public void setConvidado(int convidado) {
+		this.convidado = convidado;
+	}
+
 	public String addUser() throws Exception{
 		
 		//save it
@@ -44,6 +54,15 @@ public class UserAction implements ModelDriven<User>{
 	
 	public String home() {
 		return "success";
+	}
+	
+	public String preLogin()
+	{
+		return "success";
+	}
+	public String preLoginFailed()
+	{
+		return "failed";
 	}
 	
 	public String login() throws Exception {

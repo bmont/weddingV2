@@ -18,14 +18,28 @@
 		    <result name="success">pages/user.jsp</result>
 		</action>
 
-		<action name="authAction"
+<!-- 		<action name="authAction" -->
+<!-- 			class="userAction" method="login" > -->
+<!-- 		    <result name="success">pages/login.jsp</result> -->
+<!-- 		</action> -->
+
+		<action name="homeAction"
 			class="userAction" method="home" >
-		    <result name="success">pages/login.jsp</result>
+		    <result name="success">pages/start.jsp</result>
 		</action>
 
 		<action name="loginAction"
 			class="userAction" method="login" >
 		    <result name="success">pages/home.jsp</result>
+		    <result name="failed">pages/failed.jsp</result>
+		</action>
+
+		<action name="preLoginAction"
+			class="userAction" method="preLogin" >
+		    <result name="success">pages/login.jsp</result>
+		</action>
+		<action name="preLoginFailedAction"
+			class="userAction" method="preLoginFailed" >
 		    <result name="failed">pages/failed.jsp</result>
 		</action>
 
