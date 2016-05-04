@@ -12,6 +12,12 @@
         <property name="name" type="string">
             <column name="NAME" length="45" not-null="true" />
         </property>
+        <property name="lastName" type="string">
+            <column name="LASTNAME" length="45" not-null="true" />
+        </property>
+        <property name="gender" type="string">
+            <column name="GENERO" length="45" not-null="true" />
+        </property>
         <property name="password" type="string">
             <column name="PASSWORD" length="45" not-null="true" />
         </property>
@@ -25,7 +31,7 @@
             <column name="GIFT_ID" />
          </property>   
         <property name="created" type="timestamp">
-            <column name="CREATED_DATE" length="19" not-null="true" />
+            <column name="CREATED_DATE" length="19" not-null="false" />
         </property>
     </class>
 </hibernate-mapping>

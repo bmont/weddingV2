@@ -56,6 +56,10 @@ public class UserAction implements ModelDriven<User>{
 		return "success";
 	}
 	
+	public String preAddUser()
+	{
+		return "success";
+	}
 	public String preLogin()
 	{
 		return "success";

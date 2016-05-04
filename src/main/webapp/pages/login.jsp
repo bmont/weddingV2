@@ -26,7 +26,7 @@
 		        <input type="email" name="mail" id="inputEmail" class="form-control" placeholder="E-mail" required autofocus>
 		        <label for="inputPassword" class="sr-only">Senha</label>
 		        <input type="password"  name="password" id="inputPassword" class="form-control" placeholder="Password" required>
-		        <a class="text-left" href="loginAction.action">Não tenho cadastro</a>
+		        <a class="text-left" href="preAddUserAction.action">Não tenho cadastro</a>
 		        <div class="checkbox">
 		          <label>
 		            <input type="checkbox" value="remember-me"> Me mantenha logado

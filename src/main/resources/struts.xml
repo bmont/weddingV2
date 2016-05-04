@@ -10,11 +10,11 @@
 		
 		<action name="addUserAction" 
 			class="userAction" method="addUser" >
-		    <result name="success">pages/user.jsp</result>
+		    <result name="success">pages/home.jsp</result>
 		</action>
 	
-		<action name="listUserAction"
-			class="userAction" method="listUser" >
+		<action name="preAddUserAction"
+			class="userAction" method="preAddUser" >
 		    <result name="success">pages/user.jsp</result>
 		</action>
 

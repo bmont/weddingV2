@@ -18,6 +18,10 @@ public class User {
 	
 	private String name;
 	
+	private String lastName;
+	
+	private String gender;
+	
 	private String password;
 	
 	private String mail;
@@ -82,6 +86,22 @@ public class User {
 
 	public void setGiftId(Long giftId) {
 		this.giftId = giftId;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastname) {
+		this.lastName = lastname;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 	
 	
