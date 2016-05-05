@@ -64,6 +64,13 @@ public class GiftAction implements ModelDriven<Gift>{
 		try{
 			User user = userBo.getUser((long) getUserId());
 			if(user != null){
+				
+				if(user.getGiftId()!= null && user.getGiftId() >0) {
+					Gift aux = giftBo.findGift(user.getGiftId());
+					aux.setDisp(true);
+					giftBo.update(aux);
+				}
+				
 				user.setGiftId(gift.getId());
 				userBo.update(user);
 			}

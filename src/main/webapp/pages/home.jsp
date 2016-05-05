@@ -14,40 +14,41 @@
  
 <body>
 <input type="hidden" name="userId" value="${userId}" />
-<!-- <div class="navbar-wrapper"> -->
-<!--       <div class="container"> -->
+<div class="navbar-wrapper">
+      <div class="container">
 
-<!--         <nav class="navbar navbar-inverse navbar-static-top"> -->
-<!--           <div class="container"> -->
-<!--             <div class="navbar-header"> -->
-<!--               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> -->
-<%--                 <span class="sr-only">Toggle navigation</span> --%>
-<%--                 <span class="icon-bar"></span> --%>
-<%--                 <span class="icon-bar"></span> --%>
-<%--                 <span class="icon-bar"></span> --%>
-<!--               </button> -->
-<!--               <a class="navbar-brand" href="#">Julie&Bruno</a> -->
-<!--             </div> -->
-<!--             <div id="navbar" class="navbar-collapse collapse"> -->
-<!--               <ul class="nav navbar-nav"> -->
-<!--                 <li class="active"><a href="#">Home</a></li> -->
-<!--                 <li><a href="#about">Nosso Dia</a></li> -->
-<!--                 <li><a href="#contact">Mensagem para os Noivos</a></li> -->
-<!--                 <li class="dropdown"> -->
-<%--                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mais Aqui<span class="caret"></span></a> --%>
-<!--                   <ul class="dropdown-menu"> -->
-<!--                     <li><a href="#">Quiz dos Noivos</a></li> -->
-<!--                     <li><a href="#">Fotos</a></li> -->
-<!--                     <li><a href="#">Sugestões</a></li> -->
-<!--                   </ul> -->
-<!--                 </li> -->
-<!--               </ul> -->
-<!--             </div> -->
-<!--           </div> -->
-<!--         </nav> -->
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Julie&Bruno</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">Maio, 29</a></li>
+                <li><a href="#contact">Fotos</a></li>
+                <li><a href="#contact">Logout</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Conta<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Mensagem para os Noivos</a></li>
+                    <li><a href="#">Sugestões</a></li>
+                    <li><a href="#">Excluir Minha Conta</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
 
-<!--       </div> -->
-<!--     </div> -->
+      </div>
+    </div>
 
 
     <!-- Carousel
@@ -110,7 +111,7 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">Bem Vindo, <span class="text-muted" >Fulano</span></h2>
+          <h2 class="featurette-heading">Bem Vindo, <span class="text-muted" ><c:out value="${name}"/></span></h2>
           <p class="lead">Criamos essa plataforma para estar mais perto dos convidados nessa contagem regressiva. Estamos muitos ansiosos e sabemos que vai sair tudo lindo.</p>
         </div>
         <div class="col-md-5">
@@ -128,7 +129,7 @@
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Sugestões</h2>
+          <h2>Dar Pitaco</h2>
           <p>Queremos saber a opinião de vocês sobre alguns temas. É coisa rápida.</p>
           <p><a class="btn btn-default" href="#" role="button">Empezar &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
@@ -170,7 +171,7 @@
         </div>
         <div class="col-md-5">
           <p>500x500</p>
-          <img class="featurette-image img-responsive center-block" src="img/luna.jpg" >
+          <img class="featurette-image img-responsive center-block img-rounded" src="img/luna.jpg" >
         </div>
       </div>
 

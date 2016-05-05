@@ -21,7 +21,7 @@
         <p></p>
         
          <form id="defaultForm" class="form-horizontal" action="pickGiftAction">
-				        <table id="table" class="table table-striped table-bordered" cellspacing="0">
+				        <table id="table" class="table table-striped table-bordered table-hover" >
 				            <thead>
 				            <tr>
 				            	<th></th>
@@ -41,7 +41,7 @@
 				            			</tr>
 					            			
 			            			</c:if>
-		            				<tr class="info">
+		            				<tr>
 				            			<c:if test="${gift.disp == true}"> 
 					            			<td><input type="radio" value="${gift.id}" name="id"></td>
 					            			<td><c:out value="${gift.id}" /></td>
@@ -53,14 +53,15 @@
 				            </tbody>
 				        </table>
          
-        <button type="submit" id="button" class="btn btn-success" data-dismiss="modal">Confirmar</button>
+        <button type="submit" id="button" class="btn btn-success">Confirmar</button>
         </form>
     </div>
 <script>
 
 $(document).ready(function() {
     $('#table').DataTable({
-        order: [ 1, 'asc' ]
+        order: [[ 1, 'asc' ]],
+        pagingType: "simple_numbers"
     } );
 } );
 
