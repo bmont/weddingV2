@@ -26,7 +26,7 @@ public class GiftDaoImpl extends HibernateDaoSupport implements GiftDao{
 
 	@Override
 	public Gift findGift(Long id) {
-		List<Gift> gList = getHibernateTemplate().find("from Gift where id = ?", id);
+		List<Gift> gList = getHibernateTemplate().find("from Gift where gift_id = ?", id);
 		if(gList != null && !gList.isEmpty())
 			return gList.get(0);
 		else

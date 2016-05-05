@@ -6,6 +6,7 @@
  
  	<bean id="giftAction" class="com.juliannebezerra.wedding.action.GiftAction">
 		<property name="giftBo" ref="giftBo" />	
+		<property name="userBo" ref="userBo" />	
 	</bean>
 
 	<bean id="giftBo" class="com.juliannebezerra.wedding.bo.impl.GiftBoImpl" >

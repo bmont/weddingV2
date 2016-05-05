@@ -15,7 +15,7 @@
         <property name="price" type="java.lang.Long">
             <column name="PRICE" />
         </property>
-        <property name="disp" type="int">
+        <property name="disp" type="boolean">
             <column name="DISP" />
         </property>
     </class>

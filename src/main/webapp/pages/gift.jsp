@@ -1,33 +1,69 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
+<!DOCTYPE html>
 <html>
 <head>
+    <title>JB</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-table.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-table.js"></script>
+    <script src="js/dataTables.bootstrap.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
 </head>
- 
 <body>
-<h1>Julie E Bruno</h1>
+	<input type="hidden" name="userId" value="${userId}"/>
+    <div class="container">
+        <h1>Lista de Presentes</h1>
+        <p></p>
+        
+         <form id="defaultForm" class="form-horizontal" action="pickGiftAction">
+				        <table id="table" class="table table-striped table-bordered" cellspacing="0">
+				            <thead>
+				            <tr>
+				            	<th></th>
+				                <th>ID</th>
+				                <th>Nome</th>
+				                <th>Preco</th>
+				            </tr>
+				            </thead>
+				            <tbody>
+				            	<c:forEach items="${giftList}" var="gift">
+			            			<c:if test="${gift.disp == false}"> 
+					            		<tr class="warning">
+					            			<td><input type="radio" value="${gift.id}" disabled="disabled" name="id"></td>
+					            			<td><c:out value="${gift.id}" /></td>
+					            			<td><c:out value="${gift.name}" /></td>
+					            			<td><c:out value="${gift.price}" /></td>
+				            			</tr>
+					            			
+			            			</c:if>
+		            				<tr class="info">
+				            			<c:if test="${gift.disp == true}"> 
+					            			<td><input type="radio" value="${gift.id}" name="id"></td>
+					            			<td><c:out value="${gift.id}" /></td>
+					            			<td><c:out value="${gift.name}" /></td>
+					            			<td><c:out value="${gift.price}" /></td>
+				            			</c:if>
+				            		</tr>
+				            	</c:forEach>
+				            </tbody>
+				        </table>
+         
+        <button type="submit" id="button" class="btn btn-success" data-dismiss="modal">Confirmar</button>
+        </form>
+    </div>
+<script>
 
-<h2>Presentes</h2>
+$(document).ready(function() {
+    $('#table').DataTable({
+        order: [ 1, 'asc' ]
+    } );
+} );
 
-<s:if test="giftList.size() > 0">
-<table border="1px" cellpadding="8px">
-	<tr>
-		<th>Gift Id</th>
-		<th>Name</th>
-		<th>Price</th>
-		<th>Disponivel</th>
-	</tr>
-	<s:iterator value="giftList" status="giftStatus">
-		<tr>
-			<td><s:property value="id" /></td>
-			<td><s:property value="name" /></td>
-			<td><s:property value="price" /></td>
-			<td><s:property value="disp" /></td>
-		</tr>
-	</s:iterator>
-</table>
-</s:if>
-<br/>
-<br/>
-
+</script>
 </body>
 </html>

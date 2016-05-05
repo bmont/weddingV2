@@ -104,7 +104,11 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<version>2.7.7</version>
 	</dependency>
 	<!-- Hibernate query library dependency end -->
-
+	   <dependency>
+        <groupId>jstl</groupId>
+        <artifactId>jstl</artifactId>
+        <version>1.2</version>
+    </dependency>
 
   </dependencies>
 </project>

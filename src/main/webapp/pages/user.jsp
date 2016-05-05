@@ -86,17 +86,17 @@
 	                        <div class="col-lg-5">
 	                            <div class="radio">
 	                                <label>
-	                                    <input type="radio" name="gender" value="Homem" required data-fv-notempty-message="Escolha um sexo" /> Homem
+	                                    <input type="radio" name="gender" value="H" required data-fv-notempty-message="Escolha um sexo" /> Homem
 	                                </label>
 	                            </div>
 	                            <div class="radio">
 	                                <label>
-	                                    <input type="radio" name="gender" value="Mulher" /> Mulher
+	                                    <input type="radio" name="gender" value="M" /> Mulher
 	                                </label>
 	                            </div>
 	                            <div class="radio">
 	                                <label>
-	                                    <input type="radio" name="gender" value="Indeterminado" /> Ainda tô decidindo...
+	                                    <input type="radio" name="gender" value="I" /> Ainda tô decidindo...
 	                                </label>
 	                            </div>
 	                        </div>

@@ -26,12 +26,12 @@
 		        <input type="email" name="mail" id="inputEmail" class="form-control" placeholder="E-mail" required autofocus>
 		        <label for="inputPassword" class="sr-only">Senha</label>
 		        <input type="password"  name="password" id="inputPassword" class="form-control" placeholder="Password" required>
-		        <a class="text-left" href="preAddUserAction.action">Não tenho cadastro</a>
-		        <div class="checkbox">
-		          <label>
-		            <input type="checkbox" value="remember-me"> Me mantenha logado
-		          </label>
-		        </div>
+		        <a class="text-left" href="preAddUserAction.action">Primeira vez?</a>
+<!-- 		        <div class="checkbox"> -->
+<!-- 		          <label> -->
+<!-- 		            <input type="checkbox" value="remember-me"> Me mantenha logado -->
+<!-- 		          </label> -->
+<!-- 		        </div> -->
 		        <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
 	      </s:form>
 

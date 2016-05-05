@@ -9,4 +9,6 @@ public interface UserBo {
 	void addUser(User user);
 	List<User> listUsers();
 	User getFromMail(String mail);
+	User getUser(Long id);
+	void update(User user);
 }

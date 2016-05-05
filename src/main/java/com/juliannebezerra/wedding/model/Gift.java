@@ -18,7 +18,7 @@ public class Gift {
 	
 	private Long price;
 	
-	private int disp;
+	private boolean disp;
 
 	public Long getId() {
 		return id;
@@ -44,13 +44,14 @@ public class Gift {
 		this.price = price;
 	}
 
-	public int getDisp() {
+	public boolean isDisp() {
 		return disp;
 	}
 
-	public void setDisp(int disp) {
+	public void setDisp(boolean disp) {
 		this.disp = disp;
 	}
+
 
 	
 }

@@ -36,4 +36,14 @@ public class UserBoImpl implements UserBo{
 		return userDao.getFromMail(mail);
 	}
 
+	@Override
+	public User getUser(Long id) {
+		return userDao.getUser(id);
+	}
+
+	@Override
+	public void update(User user) {
+		userDao.update(user);
+	}
+
 }

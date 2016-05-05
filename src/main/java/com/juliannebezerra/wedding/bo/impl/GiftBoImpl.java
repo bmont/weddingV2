@@ -32,7 +32,7 @@ public class GiftBoImpl implements GiftBo{
 
 	@Override
 	public Gift findGift(Long id) {
-		return findGift(id);
+		return giftDao.findGift(id);
 	}
 
 }

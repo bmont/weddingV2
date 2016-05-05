@@ -18,10 +18,11 @@
 		    <result name="success">pages/user.jsp</result>
 		</action>
 
-<!-- 		<action name="authAction" -->
-<!-- 			class="userAction" method="login" > -->
-<!-- 		    <result name="success">pages/login.jsp</result> -->
-<!-- 		</action> -->
+		<action name="pickGiftAction"
+			class="giftAction" method="updateGift" >
+		    <result name="success">pages/home.jsp</result>
+		    <result name="failed">pages/failed.jsp</result>
+		</action>
 
 		<action name="homeAction"
 			class="userAction" method="home" >

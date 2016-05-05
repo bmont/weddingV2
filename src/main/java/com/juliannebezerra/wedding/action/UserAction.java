@@ -48,7 +48,7 @@ public class UserAction implements ModelDriven<User>{
 		//reload the user list
 		userList = null;
 		userList = userBo.listUsers();
-		
+		System.out.println(user.getUserId());
 		return "success";
 	}
 	

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.juliannebezerra.wedding.dao.UserDao;
+import com.juliannebezerra.wedding.model.Gift;
 import com.juliannebezerra.wedding.model.User;
 
 public class UserDaoImpl extends HibernateDaoSupport implements UserDao{
@@ -31,6 +32,20 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao{
 			ret = uList.get(0);
 		}
 		return ret;
+	}
+
+	@Override
+	public void update(User user) {
+		getHibernateTemplate().update(user);
+	}
+
+	@Override
+	public User getUser(Long id) {
+		List<User> uList = getHibernateTemplate().find("from User where user_id = ?", id);
+		if(uList != null && !uList.isEmpty())
+			return uList.get(0);
+		else
+			return null;
 	}
 
 }
