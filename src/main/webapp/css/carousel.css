@@ -41,7 +41,9 @@ body {
 .navbar-wrapper .navbar .container a {
   color: #fff;
 }
-
+.dropdown-menu{
+	background-color: #5cbdbe;
+}
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
@@ -101,6 +103,7 @@ body {
 .chicoF h2{
 	color: #5cbdbe;
 }
+
 .chicoT h2{
 	color: #ed7280;
 }
@@ -115,7 +118,13 @@ body {
   color: #fff;
   border: none;
 }
-.btn-lg:active{
+#dropActive:active{
+    background-color: #DB586A;
+}
+#dropActive:hover{
+    background-color: #DB586A;
+}
+#dropActive:focus{
     background-color: #DB586A;
 }
 

@@ -29,16 +29,16 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><a href="#">Home</a></li>
-                <li><a href="#about">Maio, 29</a></li>
-                <li><a href="#contact">Fotos</a></li>
-                <li><a href="#contact">Logout</a></li>
+                <li><a id="dropActive" href="#">Home</a></li>
+                <li><a id="dropActive" href="#about">Maio, 29</a></li>
+                <li><a id="dropActive" href="#contact">Fotos</a></li>
+                <li><a id="dropActive" href="#contact">Logout</a></li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Conta<span class="caret"></span></a>
+                  <a href="#" id="dropActive"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Conta<span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Mensagem para os Noivos</a></li>
-                    <li><a href="#">Sugestões</a></li>
-                    <li><a href="#">Excluir Minha Conta</a></li>
+                    <li><a id="dropActive"  href="#">Mensagem para os Noivos</a></li>
+                    <li><a id="dropActive" href="#">Sugestões</a></li>
+                    <li><a id="dropActive"  href="#">Excluir Minha Conta</a></li>
                   </ul>
                 </li>
               </ul>
@@ -61,7 +61,7 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img class="first-slide" src="img/gifts-3.jpg" >
+          <img class="first-slide" src="img/gifts-1.jpg" >
           <div class="container">
             <div class="carousel-caption">
               <h1>LISTA DE PRESENTES</h1>
@@ -138,11 +138,11 @@
        	<div class="custom">
 	        <div class="col-lg-4" onmouseover="changeContent('chico', 'F')" onmouseout="changeContent('chico', 'T') ">
 	          <img id="img" class="img-circle" src="img/gloria.jpg" width="140" height="140" onmouseover="changeContent('chico', 'F')" onmouseout="changeContent('chico', 'T') ">
-	          		<div id="chico" class="chicoF">
-			          <h2>Lembrou do Presente</h2>
+	          		<div id="chico" class="chicoT">
+			          <h2>Achou que eu ia Esquecer?</h2>
 	          		</div>
-			          <p>Lembrou desse presente maravilhoso que você é em nossa vida? Pois é, uma coisa é certa: 
-			          Só convidamos aqueles que as vezes bate aquela saudade por estar longe. Alguém especial pra nós.
+			          <p>Esquecer desse presente maravilhoso que você é em nossa vida? Jamais! Uma coisa é certa: 
+			          Se convidamos você é porque (as vezes)bate aquela saudade por morar longe. É especial para nós.
 			          Agora, já que falamos em presente... se você ainda não viu mais acima a nossa lista, 
 			          aqui vai uma segunda chance. </p>
 		          <p><a class="btn btn-default" href="#" role="button">É aqui, ó &raquo;</a></p>
@@ -194,8 +194,8 @@
     </div>
     <script>
     function changeContent(id, humor) {
-    	var msgF = "<h2>Lembrou do Presente</h2>";
-    	var msgT = "<h2>Esqueceu do Presente</h2>";
+    	var msgF = "<h2>Óbvio ululante que não</h2>";
+    	var msgT = "<h2>Achou que me esqueci?</h2>";
     	  var el = document.getElementById(id);
     	  if (id) {
     		  if(humor == "F"){
