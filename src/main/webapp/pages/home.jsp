@@ -61,7 +61,7 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img class="first-slide" src="" >
+          <img class="first-slide" src="img/gifts-3.jpg" >
           <div class="container">
             <div class="carousel-caption">
               <h1>LISTA DE PRESENTES</h1>
@@ -71,7 +71,7 @@
           </div>
         </div>
         <div class="item">
-          <img class="second-slide" src="" >
+          <img class="second-slide" src="img/wedding.jpg" >
           <div class="container">
             <div class="carousel-caption">
               <h1>Vai Ter Casamento Sim!!!</h1>
@@ -81,7 +81,7 @@
           </div>
         </div>
         <div class="item">
-          <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" >
+          <img class="third-slide" src="img/BAs.jpg" >
           <div class="container">
             <div class="carousel-caption">
               <h1>Viagem Gratis pra Argentina.</h1>
@@ -121,30 +121,37 @@
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="img-circle" src="img/gloria.jpg" width="140" height="140">
+          <img class="img-circle" src="img/travolta.jpg" width="140" height="140">
           <h2>Conociu los Noivus</h2>
           <p>Quão bem você conhece os noivos? Você quer provar um verdadeiro merecedor de ter recebido um convite pro melhor casamento dos últimos milhares de anos?</p>
           <p><a class="btn btn-default"  href="#" role="button">Então Clica Aqui &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          <img class="img-circle" src="img/gloria.jpg" alt="Generic placeholder image" width="140" height="140">
           <h2>Dar Pitaco</h2>
           <p>Queremos saber a opinião de vocês sobre alguns temas. É coisa rápida.</p>
           <p><a class="btn btn-default" href="#" role="button">Empezar &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Um Grande Presente</h2>
-          <p>Isso que nós somos pra vocês, já sabemos! :) Agora, falaando em presente... se você ainda não viu mais acima a nossa lista de presentes, aqui vai uma segunda chance. </p>
-          <p><a class="btn btn-default" href="#" role="button">É aqui, ó &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-
+        
+        
+        
+       	<div class="custom">
+	        <div class="col-lg-4" onmouseover="changeContent('chico', 'F')" onmouseout="changeContent('chico', 'T') ">
+	          <img id="img" class="img-circle" src="img/gloria.jpg" width="140" height="140" onmouseover="changeContent('chico', 'F')" onmouseout="changeContent('chico', 'T') ">
+	          		<div id="chico" class="chicoF">
+			          <h2>Lembrou do Presente</h2>
+	          		</div>
+			          <p>Lembrou desse presente maravilhoso que você é em nossa vida? Pois é, uma coisa é certa: 
+			          Só convidamos aqueles que as vezes bate aquela saudade por estar longe. Alguém especial pra nós.
+			          Agora, já que falamos em presente... se você ainda não viu mais acima a nossa lista, 
+			          aqui vai uma segunda chance. </p>
+		          <p><a class="btn btn-default" href="#" role="button">É aqui, ó &raquo;</a></p>
+        	</div>
+	    </div>
+	      
+      </div>
 
       <!-- START THE FEATURETTES -->
-
-      
-
       <hr class="featurette-divider">
 
       <div class="row featurette">
@@ -185,5 +192,26 @@
       </footer>
 
     </div>
+    <script>
+    function changeContent(id, humor) {
+    	var msgF = "<h2>Lembrou do Presente</h2>";
+    	var msgT = "<h2>Esqueceu do Presente</h2>";
+    	  var el = document.getElementById(id);
+    	  if (id) {
+    		  if(humor == "F"){
+    	    	el.innerHTML = msgF;
+    	    	$("#chico").removeClass("chicoT");
+    	    	$("#chico").addClass("chicoF");
+    	    	$("#img").attr("src","img/gloria.jpg");
+    		  }
+    		  else if(humor == "T"){
+    	    	el.innerHTML = msgT;
+    	    	$("#chico").removeClass("chicoF");
+    	    	$("#chico").addClass("chicoT");
+    	    	$("#img").attr("src","img/travolta.jpg");
+    		  }
+    	  }
+    	}
+	</script>
 </body>
 </html>

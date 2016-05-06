@@ -58,7 +58,6 @@ body {
 /* Declare heights because of positioning of img element */
 .carousel .item {
   height: 500px;
-  background-color: #BBBDC0;
 }
 .carousel-inner > .item > img {
   position: absolute;
@@ -95,11 +94,22 @@ body {
   font-weight: normal;
   color: #5cbdbe;
 }
+
+.marketing .custom h2 {
+  font-weight: normal;
+}
+.chicoF h2{
+	color: #5cbdbe;
+}
+.chicoT h2{
+	color: #ed7280;
+}
 .marketing .col-lg-4 p {
   margin-right: 10px;
   margin-left: 10px;
   color: #7f6c6a;
 }
+
 .marketing .col-lg-4 p a{
   background-color: #ed7280;
   color: #fff;
