@@ -4,7 +4,7 @@
 
 body {
   padding-bottom: 40px;
-  color: #116da3;
+  background-color: #fffdee;
 }
 
 
@@ -28,11 +28,19 @@ body {
 .navbar-wrapper .navbar {
   padding-right: 15px;
   padding-left: 15px;
+  background-color: #5cbdbe;
+  border: none;
+  
 }
 .navbar-wrapper .navbar .container {
   width: auto;
 }
-
+.navbar-wrapper .navbar .container .active {
+  color:#720B87;
+}
+.navbar-wrapper .navbar .container a {
+  color: #fff;
+}
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -41,7 +49,6 @@ body {
 .carousel {
   height: 500px;
   margin-bottom: 60px;
-  background-color: #00b9b5;
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
@@ -61,23 +68,46 @@ body {
   height: 500px;
 }
 
+.carousel-inner p a{
+	background-color: #ed7280;
+	color: #fff;
+	border: none;
+}
+
+#rosa {
+	color: #ed7280;
+}
+
 
 /* MARKETING CONTENT
 -------------------------------------------------- */
 
 /* Center align the text within the three columns below the carousel */
+
+.marketing .col-md-7 {
+  color: #7f6c6a;
+}
 .marketing .col-lg-4 {
   margin-bottom: 20px;
   text-align: center;
 }
 .marketing h2 {
   font-weight: normal;
+  color: #5cbdbe;
 }
 .marketing .col-lg-4 p {
   margin-right: 10px;
   margin-left: 10px;
+  color: #7f6c6a;
 }
-
+.marketing .col-lg-4 p a{
+  background-color: #ed7280;
+  color: #fff;
+  border: none;
+}
+.btn-lg:active{
+    background-color: #DB586A;
+}
 
 /* Featurettes
 ------------------------- */
@@ -127,6 +157,15 @@ body {
     font-size: 50px;
   }
 }
+
+footer p {
+	color: #7f6c6a;
+}
+
+p a {
+	color: #5cbdbe;
+}
+
 
 @media (min-width: 992px) {
   .featurette-heading {
