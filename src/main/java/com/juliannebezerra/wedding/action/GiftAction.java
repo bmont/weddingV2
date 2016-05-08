@@ -15,6 +15,7 @@ public class GiftAction implements ModelDriven<Gift>{
 	List<Gift> giftList = new ArrayList<Gift>();
 	
 	int userId;
+	String userName;
 	
 	GiftBo giftBo;
 	UserBo userBo;
@@ -25,6 +26,14 @@ public class GiftAction implements ModelDriven<Gift>{
 
 	public void setGiftBo(GiftBo giftBo) {
 		this.giftBo = giftBo;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public UserBo getUserBo() {
@@ -57,6 +66,8 @@ public class GiftAction implements ModelDriven<Gift>{
 	}
 
 	public String listGifts() {
+		System.out.println(getUserId());
+		System.out.println(getUserName());
 		giftList = giftBo.listGifts();
 		return "giftListed";
 	}
@@ -84,5 +95,8 @@ public class GiftAction implements ModelDriven<Gift>{
 		}
 		return "failed";
 		
+	}
+	public String loadFotos(){
+		return "success";
 	}
 }

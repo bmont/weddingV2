@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="gift")
@@ -17,8 +18,14 @@ public class Gift {
 	private String name;
 	
 	private Long price;
+	private Long priceMax;
 	
 	private boolean disp;
+	
+	@Transient
+	private Long userId;
+	@Transient
+	private String userName;
 
 	public Long getId() {
 		return id;
@@ -50,6 +57,30 @@ public class Gift {
 
 	public void setDisp(boolean disp) {
 		this.disp = disp;
+	}
+
+	public Long getPriceMax() {
+		return priceMax;
+	}
+
+	public void setPriceMax(Long priceMax) {
+		this.priceMax = priceMax;
+	}
+
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 

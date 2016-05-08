@@ -12,7 +12,7 @@
 	    <link href="http://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet" type="text/css">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/countdown.css" rel="stylesheet">
-		<title>Julie&Bruno</title>
+		<title>Julie e Bruno 2016</title>
 	</head>
  
 	<body>
@@ -75,8 +75,8 @@
 	   		<div class="clock row">
 		      <p class="text2">Recebeu nosso convite?</p>
 		      <p class="text2">
-		        <a href="preLoginAction.action" class="btn btn-lg btn-primary">Sim, já contando os dias.</a>
-		        <a href="preLoginFailedAction" class="btn btn-lg btn-danger">Não chegou ainda.</a>
+		        <a href="preLogin.action" class="btn btn-lg btn-primary">Sim, já contando os dias.</a>
+		        <a href="preLoginFailed.action" class="btn btn-lg btn-danger">Não chegou ainda.</a>
 		      </p>
 	      </div>
 	    </div>

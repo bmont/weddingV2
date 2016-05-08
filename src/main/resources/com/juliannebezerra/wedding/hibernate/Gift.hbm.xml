@@ -15,6 +15,9 @@
         <property name="price" type="java.lang.Long">
             <column name="PRICE" />
         </property>
+        <property name="priceMax" type="java.lang.Long">
+            <column name="PRICE_MAX" />
+        </property>
         <property name="disp" type="boolean">
             <column name="DISP" />
         </property>

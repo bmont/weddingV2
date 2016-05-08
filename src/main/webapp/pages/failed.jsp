@@ -21,28 +21,13 @@
 
         <div class="cover-container">
 
-<!--           <div class="masthead clearfix"> -->
-<!--             <div class="inner"> -->
-<!--               <h3 class="masthead-brand">Cover</h3> -->
-<!--               <nav> -->
-<!--                 <ul class="nav masthead-nav"> -->
-<!--                   <li class="active"><a href="#">Home</a></li> -->
-<!--                   <li><a href="#">Features</a></li> -->
-<!--                   <li><a href="#">Contact</a></li> -->
-<!--                 </ul> -->
-<!--               </nav> -->
-<!--             </div> -->
-<!--           </div> -->
 
           <div class="inner cover">
             <h1 class="cover-heading">Ainda não foi convidado?</h1>
             <p class="lead">Espera que já chega.</p>
             <p class="lead">
-              <a href="#" class="btn btn-lg btn-default">Mande uma mensagem.</a>
+              <a href="initMensagemSin.action" id="voltar" class="btn btn-lg btn-default">Mande uma mensagem.</a>
             </p>
-			<div class="embed-responsive embed-responsive-16by9">
-			  <iframe class="embed-responsive-item" src="https://www.youtube.com/watch?v=F-S0T4xTdLY"></iframe>
-			</div>
           </div>
 			
         </div>
@@ -51,8 +36,5 @@
 
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
   </body>
 </html>

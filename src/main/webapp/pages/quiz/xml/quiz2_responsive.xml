@@ -1,0 +1,920 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+
+    <events>
+		<event id="btnover">
+			<rollover>
+				<css name="btnOverCss">this</css>
+			</rollover>
+			
+			<rollout>
+				<css name="btnOutCss">this</css>
+			</rollout>
+		</event>
+
+		<event id="optionover">
+			<rollover>
+				<css name="optionOverCss">this</css>
+			</rollover>
+			
+			<rollout>
+				<css name="optionOutCss">this</css>
+			</rollout>
+		</event>
+		
+		<event id="selectandsubmit">
+			<click>
+				<css name="optionOverCss">this</css>
+				<function name="select">this</function>
+				<function name="submit">this</function>
+			</click>
+		</event>
+
+		<event id="select">
+			<click>
+				<css name="optionOverCss">this</css>
+				<function name="select">this</function>
+			</click>
+		</event>
+
+		<event id="submit">
+			<click>
+				<function name="submit">this</function>
+			</click>
+		</event>
+
+		<event id="reset">
+			<click>
+				<function name="reset">this</function>
+			</click>
+		</event>
+		
+        <event id="begin">
+            <click>
+                <anim type="remove" animtime="0" oncomplete="0">openingText</anim>
+                <function name="begin">this</function>
+            </click>
+        </event>
+
+        <event id="loadNextQuestion">
+            <click>
+                <function name="loadNextQuestion">this</function>
+            </click>
+        </event>
+		
+		<event id="restart">
+            <click>
+                <function name="restart">this</function>
+            </click>
+        </event>
+
+        <event id="showq1bg">
+            <click>
+                <anim type="show" animtime="2" oncomplete="0">q1bg</anim>
+            </click>
+        </event>
+
+         <event id="hidepassbg">
+            <click>
+            	<anim type="hide" animtime="2" oncomplete="0">passbg</anim>
+            </click>
+        </event>
+
+        <event id="showpassbg">
+            <click>
+                <anim type="show" animtime="5" oncomplete="0">passbg</anim>
+            </click>
+        </event>
+
+        <event id="hidefailbg">
+            <click>
+            	<anim type="hide" animtime="2" oncomplete="0">failbg</anim>
+            </click>
+        </event>
+
+        <event id="showfailbg">
+            <click>
+                <anim type="show" animtime="2" oncomplete="0">failbg</anim>
+            </click>
+        </event>
+    </events>    
+
+    <box id="failbg" position="absolute" x="0" y="0" width="100%" height="100%" anim="hide" class="failbg" />
+    <box id="orangebg" position="absolute" x="0" y="0" width="100%" height="100%" anim="hide" class="orangebg" />
+
+
+    <!--responsive timer-->
+    <!--2 column layout, timer on the right, moves to top center on phones-->
+    <box id="timerRow" position="absolute" x="0" y="0" anim="none" animtime="0.5" animdelay="1" class="col-md-10 col-md-offset-1 timerRow">
+    	<box id="timerCol1" position="relative" class="col-md-6" />
+    	<box id="timerContainer" position="relative" class="col-md-6 timerContainer" />
+    </box>
+
+    <!--opening text-->
+    <box id="openingText" position="relative" anim="left" animtime="0.5" animdelay="1" class="col-md-10 col-md-offset-1 vertical-align" z-index="3">
+
+    	<text id="title" position="relative" margin-top="20" anim="none"><![CDATA[<h1 class="black">QUIZZZZ TIME </h1><p class="p_16_black">Quão bem você conhece os noivos?.</p><p class="p_16_black">Se liga que tem tempo pra responder e não vale roubar!</p>]]></text>
+
+    	<button id="goBtn" position="relative" height="40" width="100" margin-top="40" margin-bottom="20" anim="none" event="btnover,begin" target="title"><![CDATA[Começar]]></button>
+    </box>
+
+    <!--timed quiz-->
+    <custom type="quiz" id="quiz" position="relative" x="0" y="0" class="col-md-10 col-md-offset-1">
+		<settings timer="true" timerx="0" timery="0"/>
+        
+		<!-- question 1 -->
+        <question id="q1" time="60" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question1" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">First things first. <br> QUEM SÃO OS NOIVOS</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<image id="img1" position="relative" target="col1" x="match"  width="40%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="img-responsive img-rounded img_opt"><![CDATA[pages/quiz/assets/angelina.jpg]]></image>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="true">
+				<image id="img2" position="relative" target="col1" x="match"  width="40%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="img-responsive img-rounded img_opt"><![CDATA[pages/quiz/assets/noivos.jpg]]></image>
+			</option>
+			
+			<!--option 3 -->	
+			<option correct="false">
+				<image id="img3" position="relative" target="col1" x="match"  width="40%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="img-responsive img-rounded img_opt" ><![CDATA[pages/quiz/assets/joelma.jpg]]></image>
+			</option>
+			<!--/options -->
+			
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+
+				<box id="fb" position="relative" target="col2" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive img-rounded"><![CDATA[pages/quiz/assets/acerto.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">ACERTÔ</p><p>Se errasse essa também... Seria desconvidado :) </p>]]></text>
+			
+					<button id="nextQBtn" position="relative" width="150" margin-bottom="10" anim="none" event="btnover,loadNextQuestion"><![CDATA[Próxima]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive img-rounded"><![CDATA[pages/quiz/assets/nope.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">ERRASSE</p><p>Vamos acreditar que você se confundiu ao apertar o botão... porque né.....</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" width="150" margin-bottom="10" anim="none" event="btnover,loadNextQuestion"><![CDATA[Próxima]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+
+		<!-- question 2 -->
+        <question id="q2" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question2" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">Onde atualmente vivem os noivos?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<text id="option2_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Dublin</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option2_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Recife</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="true">
+				<text id="option2_3" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Buenos Aires</p>]]></text>
+			</option>
+			<!--option 4 -->
+			<option correct="false">
+				<text id="option2_4" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Cancun</p>]]></text>
+			</option>
+			<!--option 5 -->
+			<option correct="false">
+				<text id="option2_5" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Dubai</p>]]></text>
+			</option>
+			<!--option 6 -->
+			<option correct="false">
+				<text id="option2_6" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Vancouver</p>]]></text>
+			</option>
+			<!--option 7 -->
+			<option correct="false">
+				<text id="option2_7" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Tokyo</p>]]></text>
+			</option>
+			<!--/options -->
+			
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[pages/quiz/assets/acerto.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Acertô!</p><p>Muito fácil essa....</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Próxima]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[pages/quiz/assets/nope.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Errasse! perdeu 20 pontos.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Próxima]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+
+		<!-- question 3 -->
+        <question id="q3" time="40" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question3" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">O que a noiva atualmente faz em Buenos Aires?</p> <p>(Pode escolher mais de uma )</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="true">
+				<text id="option3_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,select" class="optionBox"><![CDATA[<p class="p_16 white">Trabalha como diseñadora gráfica pra uma aplicação mobile.</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option3_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,select" class="optionBox"><![CDATA[<p class="p_16 white">Estuda design de moda</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="false">
+				<text id="option3_3" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.7" event="optionover,select" class="optionBox"><![CDATA[<p class="p_16 white">Trabalha como publicitária em uma agência.</p>]]></text>
+			</option>
+			<!--/options -->
+
+			<option correct="false">
+				<text id="option3_4" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.7" event="optionover,select" class="optionBox"><![CDATA[<p class="p_16 white">Vende coxinha e brigadeiro pra brasileiros que vivem em BsAs.</p>]]></text>
+			</option>
+
+			<option correct="true">
+				<text id="option3_5" position="relative" target="col1" x="match" width="100%" margin-bottom="20" anim="show" animtime="0.5" animdelay="0.7" event="optionover,select" class="optionBox"><![CDATA[<p class="p_16 white">Trabalha como Designer Freelancer no seu tempo livre.</p>]]></text>
+			</option>
+			<!--/options -->
+
+			<button id="submitBtn" position="relative" target="col1" x="match" float="left" width="100" anim="disabled" animtime="0.3" animdelay="0.7" event="btnover,submit"><![CDATA[<p class="genericBtn">Confirmar</p>]]></button>
+			<button id="resetBtn" position="relative" target="col1" x="match" float="left" margin-left="10" margin-bottom="40" width="100" anim="disabled" animtime="0.3" animdelay="0.7" event="btnover,reset"><![CDATA[<p class="genericBtn">Resetar</p>]]></button>
+			
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[pages/quiz/assets/acerto.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Acertô!. Parece que tá por dentro dos paranauê da noiva.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Próxima]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+
+			<fb id="partial" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="partialimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[pages/quiz/assets/close.gif]]></image>
+
+					<text id="txt11" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Na traaave.</p><p>Alguma coisa faltou. Mas chegou perto.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Próxima]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[pages/quiz/assets/nope.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Nenhum Acerto!</p><p>Tá difícil viu?.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Vamos ver se na Próxima vai]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+		<!-- question 4 -->
+        <question id="q4" time="40" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question4" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">E quanto você sabe sobre o noivo?</p> <p>(Pode escolher mais de uma )</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<text id="option4_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,select" class="optionBox"><![CDATA[<p class="p_16 white">Trabalha como engenheiro civil.</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="true">
+				<text id="option4_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,select" class="optionBox"><![CDATA[<p class="p_16 white">Estuda medicina na Universidade de Buenos Aires</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="true">
+				<text id="option4_3" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.7" event="optionover,select" class="optionBox"><![CDATA[<p class="p_16 white">Trabalha como <i>Software Engineer</i> para EA Sports com o jogo Fifa.</p>]]></text>
+			</option>
+			<!--/options -->
+
+			<option correct="false">
+				<text id="option4_4" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.7" event="optionover,select" class="optionBox"><![CDATA[<p class="p_16 white">Dá aulas de musculação 2x por semana em academia em BsAs.</p>]]></text>
+			</option>
+
+			<option correct="false">
+				<text id="option4_5" position="relative" target="col1" x="match" width="100%" margin-bottom="20" anim="show" animtime="0.5" animdelay="0.7" event="optionover,select" class="optionBox"><![CDATA[<p class="p_16 white">Nos finais de semana trabalha como passeador de cachorros.</p>]]></text>
+			</option>
+			<!--/options -->
+
+			<button id="submitBtn" position="relative" target="col1" x="match" float="left" width="100" anim="disabled" animtime="0.3" animdelay="0.7" event="btnover,submit"><![CDATA[<p class="genericBtn">Confirmar</p>]]></button>
+			<button id="resetBtn" position="relative" target="col1" x="match" float="left" margin-left="10" margin-bottom="40" width="100" anim="disabled" animtime="0.3" animdelay="0.7" event="btnover,reset"><![CDATA[<p class="genericBtn">Resetar</p>]]></button>
+			
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[pages/quiz/assets/acerto.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Acertô! Parece que tá por dentro dos paranauê do noivo.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Próxima]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+
+			<fb id="partial" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="partialimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[pages/quiz/assets/close.gif]]></image>
+
+					<text id="txt11" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Na traaave.</p><p>Alguma coisa faltou. Mas chegou perto.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Próxima]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[pages/quiz/assets/nope.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Nenhum Acerto!</p><p>Eu esperava mais.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Próxima Pregunta]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+
+		<!-- question 5 -->
+        <question id="q5" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question5" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">Jack, Zeca, Tobby, Bia e....</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<text id="option5_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Frida.</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option5_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Nina.</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="true">
+				<text id="option5_3" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Luna.</p>]]></text>
+			</option>
+
+			<!--option 4 -->
+			<option correct="false">
+				<text id="option5_4" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Mel.</p>]]></text>
+			</option>
+			<!--/options -->
+			
+			<!-- feedbacks -->
+			<!--option specific feedback, override generic feedback-->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="fb1image" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[pages/quiz/assets/adog.jpg]]></image>
+
+					<text id="txt1" position="relative" margin-bottom="30" anim="none"><![CDATA[<p class="p_24">Acertô!!</p><p>Au au au au.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Próxima]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="fb2image" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[pages/quiz/assets/edog.jpg]]></image>
+
+					<text id="txt1" position="relative" margin-bottom="30" anim="none"><![CDATA[<p class="p_24">Não!</p><p>Essa era uma fácil.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Próxima]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+
+		</question>
+
+		<!-- question 7 -->
+        <question id="q7" time="60">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question7" position="relative" target="col1" width="100%" x="0" margin-top="130" margin-bottom="20" anim="left" animtime="0.5"><![CDATA[<p class="p_24">Qual foi a data originalmente escolhida pro casamento?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<text id="option7_1" position="relative" target="col1" x="match" width="100%" margin-bottom="5" anim="left" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">21 de janeiro de 2016</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option7_2" position="relative" target="col1" x="match" width="100%" margin-bottom="5" anim="left" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">11 de fevereiro de 2016</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="false">
+				<text id="option7_3" position="relative" target="col1" x="match" width="100%" margin-bottom="5" anim="left" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">7 de março de 2016</p>]]></text>
+			</option>
+
+			<!--option 4 -->
+			<option correct="true">
+				<text id="option7_4" position="relative" target="col1" x="match" width="100%" margin-bottom="5" anim="left" animtime="0.5" animdelay="0.8" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">20 de março de 2016</p>]]></text>
+			</option>
+
+			<!--option 5 -->
+			<option correct="false">
+				<text id="option7_5" position="relative" target="col1" x="match" width="100%" margin-bottom="5" anim="left" animtime="0.5" animdelay="0.9" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">1 de abril de 2016</p>]]></text>
+			</option>
+
+			<!--option 6 -->
+			<option correct="false">
+				<text id="option7_6" position="relative" target="col1" x="match" width="100%" margin-bottom="20" anim="left" animtime="0.5" animdelay="1" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">11 de abril de 2016</p>]]></text>
+			</option>
+			<!--/options -->
+
+<!-- 			<button id="submitBtn" position="relative" target="col1" x="match" margin-bottom="40" width="100" anim="disabled" animtime="0.3" animdelay="0.7" event="btnover,submit" float="left"><![CDATA[<p class="genericBtn">Confirm</p>]]></button> -->
+			
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="100" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[pages/quiz/assets/acerto.jpg]]></image>
+
+					<text id="txt1" position="relative" margin-bottom="30" anim="none"><![CDATA[<p class="p_24">Acertô!</p><p>Pelo visto tava ligado na data</p>]]></text>
+
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="230" anim="none" event="btnover,loadNextQuestion"><![CDATA[Próxima]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="100" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[pages/quiz/assets/nope.jpg]]></image>
+
+					<text id="txt1" position="relative" margin-bottom="30" anim="none"><![CDATA[<p class="p_24">Nope!</p><p>Se não tivesse mudado acho que alguém ia esquecer, heim?</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="230" anim="none" event="btnover,loadNextQuestion"><![CDATA[Próxima]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+        <question id="q8" time="60">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question8" position="relative" target="col1" width="100%" x="0" margin-top="130" margin-bottom="20" anim="left" animtime="0.5"><![CDATA[<p class="p_24">Desde quando estão juntos os noivos</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<text id="option8_1" position="relative" target="col1" x="match" width="100%" margin-bottom="5" anim="left" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">janeiro de 2012</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="true">
+				<text id="option8_2" position="relative" target="col1" x="match" width="100%" margin-bottom="5" anim="left" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">fevereiro de 2013</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="false">
+				<text id="option8_3" position="relative" target="col1" x="match" width="100%" margin-bottom="5" anim="left" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">março de 2014</p>]]></text>
+			</option>
+
+			<!--option 4 -->
+			<option correct="false">
+				<text id="option8_4" position="relative" target="col1" x="match" width="100%" margin-bottom="5" anim="left" animtime="0.5" animdelay="0.8" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">abril de 2015</p>]]></text>
+			</option>
+			<option correct="false">
+				<text id="option8_5" position="relative" target="col1" x="match" width="100%" margin-bottom="15" anim="left" animtime="0.5" animdelay="0.8" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">maio de 2016</p>]]></text>
+			</option>
+			<!--/options -->
+
+<!-- 			<button id="submitBtn" position="relative" target="col1" x="match" margin-bottom="40" width="100" anim="disabled" animtime="0.3" animdelay="0.7" event="btnover,submit" float="left"><![CDATA[<p class="genericBtn">Confirm</p>]]></button> -->
+			
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="100" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[pages/quiz/assets/acerto.jpg]]></image>
+
+					<text id="txt1" position="relative" margin-bottom="30" anim="none"><![CDATA[<p class="p_24">Acertô!</p><p>Já acompanha há tempo.</p>]]></text>
+
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="230" anim="none" event="btnover,loadNextQuestion"><![CDATA[Próxima]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="100" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[pages/quiz/assets/nope.jpg]]></image>
+
+					<text id="txt1" position="relative" margin-bottom="30" anim="none"><![CDATA[<p class="p_24">Nope!</p><p> 11 de fevereiro - começo do namoro!</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="230" anim="none" event="btnover,loadNextQuestion"><![CDATA[Próxima]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+		
+		<!-- question 9 -->
+        <question id="q9" time="60" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question9" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">Baladinha Top ou Netflix</p>]]></text>
+			
+			<!--option 9 -->
+			<option correct="true">
+				<image id="img91" position="relative" target="col1" x="match"  width="40%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="img-responsive img-rounded img_opt"><![CDATA[pages/quiz/assets/netflix.jpg]]></image>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<image id="img92" position="relative" target="col1" x="match"  width="40%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="img-responsive img-rounded img_opt"><![CDATA[pages/quiz/assets/balada.jpg]]></image>
+			</option>
+			
+			
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+
+				<box id="fb" position="relative" target="col2" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive img-rounded"><![CDATA[pages/quiz/assets/acerto.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">ACERTÔ</p><p>Mil vezes mais netflix :) </p>]]></text>
+			
+					<button id="nextQBtn" position="relative" width="150" margin-bottom="10" anim="none" event="btnover,loadNextQuestion"><![CDATA[Próxima]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive img-rounded"><![CDATA[pages/quiz/assets/nope.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">ERRASSE</p><p>Mas porque?? Tããããão fácil essa...</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" width="150" margin-bottom="10" anim="none" event="btnover,loadNextQuestion"><![CDATA[Próxima]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+		
+		<!-- question 10 -->
+        <question id="q10" time="40" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question10" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">De que comida eles sentem mais falta?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="true">
+				<text id="option10_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,select" class="optionBox"><![CDATA[<p class="p_16 white">Tapioca de charque com carne de sol.</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="true">
+				<text id="option10_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,select" class="optionBox"><![CDATA[<p class="p_16 white">Açaí na Tigela</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="true">
+				<text id="option10_3" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.7" event="optionover,select" class="optionBox"><![CDATA[<p class="p_16 white">Sucos de fruta.</p>]]></text>
+			</option>
+			<!--/options -->
+
+			<option correct="true">
+				<text id="option10_4" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.7" event="optionover,select" class="optionBox"><![CDATA[<p class="p_16 white">Coxinha.</p>]]></text>
+			</option>
+
+			<option correct="true">
+				<text id="option10_5" position="relative" target="col1" x="match" width="100%" margin-bottom="20" anim="show" animtime="0.5" animdelay="0.7" event="optionover,select" class="optionBox"><![CDATA[<p class="p_16 white">Temaki.</p>]]></text>
+			</option>
+			<!--/options -->
+
+			<button id="submitBtn" position="relative" target="col1" x="match" float="left" width="100" anim="disabled" animtime="0.3" animdelay="0.7" event="btnover,submit"><![CDATA[<p class="genericBtn">Confirmar</p>]]></button>
+			<button id="resetBtn" position="relative" target="col1" x="match" float="left" margin-left="10" margin-bottom="40" width="100" anim="disabled" animtime="0.3" animdelay="0.7" event="btnover,reset"><![CDATA[<p class="genericBtn">Resetar</p>]]></button>
+			
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[pages/quiz/assets/acerto.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Acertô! Parece que tá por dentro dos paranauê da noiva.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Próxima]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+
+			<fb id="partial" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="partialimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[pages/quiz/assets/close.gif]]></image>
+
+					<text id="txt11" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Quase.</p><p>Chegou perto mais faltou algumas coisas mais.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Próxima]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[pages/quiz/assets/nope.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">De nada???</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Próxima vai]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+		
+		<!-- question 11 -->
+        <question id="q11" time="60" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question11" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">Que mais gostam de beber?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<text id="option11_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Vinho.</p>]]></text>
+			</option>
+			<option correct="true">
+				<text id="option11_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Cerveja.</p>]]></text>
+			</option>
+			<option correct="false">
+				<text id="option11_3" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Whisky.</p>]]></text>
+			</option>
+			<option correct="false">
+				<text id="option11_4" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Vodca.</p>]]></text>
+			</option>
+			<option correct="false">
+				<text id="option11_5" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Fernet.</p>]]></text>
+			</option>
+			<option correct="false">
+				<text id="option11_6" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Rum.</p>]]></text>
+			</option>
+			<option correct="false">
+				<text id="option11_7" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Cachaça.</p>]]></text>
+			</option>
+			<option correct="false">
+				<text id="option11_8" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Qualquer coisa sem álcool.</p>]]></text>
+			</option>
+			
+			
+			
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+
+				<box id="fb" position="relative" target="col2" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive img-rounded"><![CDATA[pages/quiz/assets/acerto.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">ACERTÔ</p><p>Artesanal de Preferência </p>]]></text>
+			
+					<button id="nextQBtn" position="relative" width="150" margin-bottom="10" anim="none" event="btnover,loadNextQuestion"><![CDATA[Próxima]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive img-rounded"><![CDATA[pages/quiz/assets/nope.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">ERRASSE</p><p>Curtimos coisas mais artesanais</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" width="150" margin-bottom="10" anim="none" event="btnover,loadNextQuestion"><![CDATA[Próxima]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+		
+		<question id="q12" time="60">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question12" position="relative" target="col1" width="100%" x="0" margin-top="130" margin-bottom="20" anim="left" animtime="0.5"><![CDATA[<p class="p_24">Por Última: Os noivos <b>já casaram!!!</b> É verdade.. no civil lá em Buenos Aires. Se você realmente acompanha eles, responde: Qual foi o dia?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<text id="option12_1" position="relative" target="col1" x="match" width="100%" margin-bottom="5" anim="left" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">15 de abril de 2016</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option12_2" position="relative" target="col1" x="match" width="100%" margin-bottom="5" anim="left" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">26 de abril de 2016</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="false">
+				<text id="option12_3" position="relative" target="col1" x="match" width="100%" margin-bottom="5" anim="left" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white"> 30 de abril de 2016</p>]]></text>
+			</option>
+
+			<!--option 4 -->
+			<option correct="true">
+				<text id="option12_4" position="relative" target="col1" x="match" width="100%" margin-bottom="5" anim="left" animtime="0.5" animdelay="0.8" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">02 de maio de 2016</p>]]></text>
+			</option>
+			<option correct="false">
+				<text id="option12_5" position="relative" target="col1" x="match" width="100%" margin-bottom="15" anim="left" animtime="0.5" animdelay="0.8" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">10 de maio de 2016</p>]]></text>
+			</option>
+			<!--/options -->
+
+<!-- 			<button id="submitBtn" position="relative" target="col1" x="match" margin-bottom="40" width="100" anim="disabled" animtime="0.3" animdelay="0.7" event="btnover,submit" float="left"><![CDATA[<p class="genericBtn">Confirm</p>]]></button> -->
+			
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="100" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[pages/quiz/assets/acerto.jpg]]></image>
+
+					<text id="txt1" position="relative" margin-bottom="30" anim="none"><![CDATA[<p class="p_24">Acertôôôô!</p><p>Pensei que ia errar essa...</p>]]></text>
+
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="230" anim="none" event="btnover,loadNextQuestion"><![CDATA[Qual foi meu resultado?]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="100" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[pages/quiz/assets/nope.jpg]]></image>
+
+					<text id="txt1" position="relative" margin-bottom="30" anim="none"><![CDATA[<p class="p_24">Nope!</p><p> Foi em outro dia.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="230" anim="none" event="btnover,loadNextQuestion"><![CDATA[Qual foi meu resultado?]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+		
+		<!--generic timeout text-->
+		<timeout>
+			<box id="center" position="relative" height="100%"> 
+	            <box id="timeOut" position="relative" height="350" margin-top="0" margin-bottom="20" anim="left" animtime="1" ease="Bounce.easeOut" class="col-sm-8 col-sm-offset-2 vertical-align border timesupbg">
+
+					<text id="timeoutTxt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none"><![CDATA[<p class="p_42 grey">Demorou muito pra pensar...</p>]]></text>
+			
+					<button id="startAgainBtn" position="relative" x="10" margin-bottom="30" height="40" width="100" anim="none" event="btnover,restart"><![CDATA[De novo?]]></button>
+				</box>
+			</box>
+        </timeout>
+
+
+        <!--score screen-->
+        <score masteryscore="80">
+           <fb id="pass" event="">
+            	<box id="center" position="relative" height="100%">
+	            	<box id="passTextBox" position="relative" height="350" margin-top="0" margin-bottom="20" anim="left" animtime="0.5" class="col-sm-8 col-sm-offset-2 vertical-align border passbg">
+						
+						<text id="pass_txt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none">
+						<![CDATA[<p class="p_30 white glow">AEEEEEEE!</p><p class="p_24 orange glow">ACERTÔ [score]%</p>]]></text>
+						
+						<button id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="140" anim="none" event="btnover,restart,hidepassbg"><![CDATA[De novo?]]></button>
+						<a id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="140" anim="none" href="home.action"></a><![CDATA[Voltar ao Site]]>
+	                </box>
+                </box>
+            </fb>
+            
+            <fb id="fail" event="">
+  				<box id="center" position="relative" height="100%">
+	            	<box id="failTextBox" position="relative" height="350" margin-top="0" margin-bottom="20" anim="left" animtime="0.5" class="col-sm-8 col-sm-offset-2 vertical-align border failbg">
+
+	                    <text id="fail_txt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none"><![CDATA[<p class="p_32 white glow">Tem que estudar mais..! Acertô [passed] de [total]</p>]]></text>
+	                        
+						<button id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="120" anim="none" animtime="0.5" event="btnover,restart,hidefailbg"><![CDATA[De novo!]]></button>
+						<a id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="140" anim="none" href="home.action"></a><![CDATA[Voltar ao Site]]>
+	                </box> 
+                </box> 
+            </fb>
+
+            <fb id="fb1" event="">
+  				<box id="center" position="relative" height="100%">
+	            	<box id="failTextBox" position="relative" height="350" margin-top="0" margin-bottom="20" anim="left" animtime="0.5" class="col-sm-8 col-sm-offset-2 vertical-align border failbg">
+
+	                    <text id="fail_txt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none"><![CDATA[<p class="p_32 white glow">Resultado:  [score]%</p>]]></text>
+	                        
+						<button id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="120" anim="none" animtime="0.5" event="btnover,restart,hidefailbg"><![CDATA[De novo!]]></button>
+						<a id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="140" anim="none" href="home.action"></a><![CDATA[Voltar ao Site]]>
+	                </box> 
+                </box> 
+            </fb>
+
+            <fb id="fb2" event="">
+  				<box id="center" position="relative" height="100%">
+	            	<box id="failTextBox" position="relative" height="350" margin-top="0" margin-bottom="20" anim="left" animtime="0.5" class="col-sm-8 col-sm-offset-2 vertical-align border failbg">
+
+	                    <text id="fail_txt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none"><![CDATA[<p class="p_32 white glow">Resultado:  [score]%</p>]]></text>
+	                        
+						<button id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="120" anim="none" animtime="0.5" event="btnover,restart,hidefailbg"><![CDATA[De novo!]]></button>
+						<a id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="140" anim="none" href="home.action"></a><![CDATA[Voltar ao Site]]>
+	                </box> 
+                </box> 
+            </fb>
+
+            <fb id="fb3" event="">
+  				<box id="center" position="relative" height="100%">
+	            	<box id="failTextBox" position="relative" height="350" margin-top="0" margin-bottom="20" anim="left" animtime="0.5" class="col-sm-8 col-sm-offset-2 vertical-align border failbg">
+
+	                    <text id="fail_txt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none"><![CDATA[<p class="p_32 white glow">Resultado:  [score]%</p>]]></text>
+	                        
+						<button id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="120" anim="none" animtime="0.5" event="btnover,restart,hidefailbg"><![CDATA[De novo!]]></button>
+						<a id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="140" anim="none" href="home.action"></a><![CDATA[Voltar ao Site]]>
+	                </box> 
+                </box> 
+            </fb>
+
+            <fb id="fb4" event="">
+  				<box id="center" position="relative" height="100%">
+	            	<box id="failTextBox" position="relative" height="350" margin-top="0" margin-bottom="20" anim="left" animtime="0.5" class="col-sm-8 col-sm-offset-2 vertical-align border failbg">
+
+	                    <text id="fail_txt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none"><![CDATA[<p class="p_32 white glow">Resultado:  [score]%</p>]]></text>
+	                        
+						<button id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="120" anim="none" animtime="0.5" event="btnover,restart,hidefailbg"><![CDATA[De novo!]]></button>
+						<a id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="140" anim="none" href="home.action"></a><![CDATA[Voltar ao Site]]>
+	                </box> 
+                </box> 
+            </fb>
+
+            <fb id="fb5" event="">
+  				<box id="center" position="relative" height="100%">
+	            	<box id="failTextBox" position="relative" height="350" margin-top="0" margin-bottom="20" anim="left" animtime="0.5" class="col-sm-8 col-sm-offset-2 vertical-align border failbg">
+
+	                    <text id="fail_txt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none"><![CDATA[<p class="p_32 white glow">Resultado:  [score]%</p>]]></text>
+	                        
+						<button id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="120" anim="none" animtime="0.5" event="btnover,restart,hidefailbg"><![CDATA[De novo!]]></button>
+						<a id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="140" anim="none" href="home.action"></a><![CDATA[Voltar ao Site]]>
+	                </box> 
+                </box> 
+            </fb>
+        </score>
+
+    </custom>
+
+</data>
+
+

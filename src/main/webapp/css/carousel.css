@@ -7,6 +7,11 @@ body {
   background-color: #fffdee;
 }
 
+.container-msg{
+	height: 300px;
+	padding-left: 10%;
+	padding-right: 10%;
+}
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
@@ -17,7 +22,7 @@ body {
   top: 0;
   right: 0;
   left: 0;
-  z-index: 20;
+  z-index: 2;
 }
 
 /* Flip around the padding for proper display in narrow viewports */
@@ -69,6 +74,18 @@ body {
   height: 500px;
 }
 
+#but{
+	border-radius: 7px;	
+	background-color: #ed7280;
+	color: #fff;
+	border: none;
+}
+.btn-group{
+	padding-left: 30%;
+	padding-top: 2%;
+	
+}
+.btn-primary,
 .carousel-inner p a{
 	background-color: #ed7280;
 	color: #fff;
@@ -78,7 +95,15 @@ body {
 #rosa {
 	color: #ed7280;
 }
+#copyright {
+    position: absolute;
+    bottom: 0;
+}
 
+#textarea {
+	width: 100%;
+	height: 250px;
+}
 
 /* MARKETING CONTENT
 -------------------------------------------------- */
@@ -118,16 +143,19 @@ body {
   color: #fff;
   border: none;
 }
-#dropActive:active{
-    background-color: #DB586A;
-}
-#dropActive:hover{
-    background-color: #DB586A;
-}
-#dropActive:focus{
-    background-color: #DB586A;
-}
 
+.carousel-caption p a:hover, 
+.carousel-caption p a:focus,
+.carousel-caption p a:active,
+#dropActive:hover,
+#dropActive:focus,
+#dropActive:active,
+#but:hover,
+#but:focus,
+#but:active {
+	background-color: #DB586A;
+	color: #fff;
+}
 /* Featurettes
 ------------------------- */
 

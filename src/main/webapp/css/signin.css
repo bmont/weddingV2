@@ -1,5 +1,5 @@
 html {
-	background-image: url('../img/sample.jpg');
+	background-image: url('../img/logo.jpg');
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;	
@@ -25,6 +25,27 @@ body {
   color: fff;	
   margin-bottom: 10px;
 }
+.form-signin .first {
+	position: relative;
+  	height: auto;
+  	float: right;
+	background-color: none;
+	-webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .first a{
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	font-size: 16px;	
+}
+.form-signin button{
+	background-color: #ed7280;
+	color: #fff;
+}
 .form-signin .checkbox {
   font-weight: normal;
 }
@@ -39,6 +60,7 @@ body {
 }
 .form-signin .form-control:focus {
   z-index: 2;
+  border-color: #ed7280;
 }
 .form-signin input[type="email"] {
   margin-bottom: -1px;

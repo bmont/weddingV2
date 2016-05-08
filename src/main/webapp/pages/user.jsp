@@ -23,7 +23,7 @@
 	                    <h2>É rapidinho!</h2>
 	                </div>
 	
-	                <form id="defaultForm" class="form-horizontal" action="addUserAction"
+	                <form id="defaultForm" class="form-horizontal" action="addUser"
 	                      data-fv-message="This value is not valid"
 	                      data-fv-icon-valid="glyphicon glyphicon-ok"
 	                      data-fv-icon-invalid="glyphicon glyphicon-remove"

@@ -3,7 +3,7 @@ html, body {
 }
 
 html {
-	background-image: url('../img/sample.jpg');
+	background-image: url('../img/logo2.jpg');
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;	
@@ -25,6 +25,7 @@ body {
 	transform: translateY(-50%);
 	float: left;
 	clear: both;
+	float: none;
 }
 
 .clock-item .inner {
