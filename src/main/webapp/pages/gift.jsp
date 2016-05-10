@@ -7,10 +7,9 @@
     <script src="js/dataTables.bootstrap.min.js"></script>
     <script src="js/jquery.dataTables.min.js"></script>
     <jsp:directive.include file="import.jsp"/>
+    <script src="js/jquery.mask.min.js"></script>
 </head>
 <body>
-	<input type="hidden" name="userId" value="${userId}" />
-	<input type="hidden" name="userName" value="${userName}" />
 	<jsp:directive.include file="header.jsp"/>   
     <div class="container">
 
@@ -50,9 +49,9 @@
 					            			<td><input type="radio" value="${gift.id}" disabled="disabled" name="gift.id"></td>
 					            		</c:if>
 					            			<td><c:out value="${gift.id}" /></td>
-					            			<td><c:out value="${gift.name}" /></td>
-					            			<td><c:out value="${gift.price}" /></td>
-					            			<td><c:out value="${gift.priceMax}" /></td>
+					            			<td ><c:out value="${gift.name}" /></td>
+					            			<td class="mon"><c:out value="${gift.price}"/></td>
+					            			<td class="mon"><c:out value="${gift.priceMax}" /></td>
 				            			</tr>
 				            	</c:forEach>
 				            </tbody>
@@ -79,6 +78,10 @@
 // }
 
 $(document).ready(function() {
+	
+	 $('.mon').mask('000.000', {reverse: true});
+	 $('.mon').property = 'R$'+$('.mon').value+',00';
+	
     $('#table').DataTable({
         order: [[ 1, 'asc' ]],
         language : {

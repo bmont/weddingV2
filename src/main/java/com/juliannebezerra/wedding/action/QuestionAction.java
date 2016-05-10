@@ -8,9 +8,9 @@ import com.juliannebezerra.wedding.model.Question;
 import com.juliannebezerra.wedding.model.User;
 import com.opensymphony.xwork2.ModelDriven;
 
-public class QuestionAction implements ModelDriven<Question> {
+public class QuestionAction  {
 
-	Question question = new Question();
+	Question question;
 	List<Question> qList = new ArrayList<Question>();
 	
 	Long userId;
@@ -22,6 +22,14 @@ public class QuestionAction implements ModelDriven<Question> {
 
 	public void setQuestionBo(QuestionBo questionBo) {
 		this.questionBo = questionBo;
+	}
+
+	public Question getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(Question question) {
+		this.question = question;
 	}
 
 	public List<Question> getqList() {
@@ -40,15 +48,7 @@ public class QuestionAction implements ModelDriven<Question> {
 		this.userId = userId;
 	}
 
-	@Override
-	public Question getModel() {
-		return question;
-	}
 
-	public String home(){
-		return "success";
-	}
-	
 	public String add(){
 		if(question.getMsg()!=null){
 			questionBo.add(question);

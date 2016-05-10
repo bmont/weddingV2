@@ -123,7 +123,7 @@
 		<settings timer="true" timerx="0" timery="0"/>
         
 		<!-- question 1 -->
-        <question id="q1" time="60" event="">
+        <question id="q1" time="2" event="">
 
     		<box id="col1" position="relative" class="col-md-6" />
     		<box id="col2" position="relative" class="col-md-6" />
@@ -835,7 +835,6 @@
 						<![CDATA[<p class="p_30 white glow">AEEEEEEE!</p><p class="p_24 orange glow">ACERTÔ [score]%</p>]]></text>
 						
 						<button id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="140" anim="none" event="btnover,restart,hidepassbg"><![CDATA[De novo?]]></button>
-						<a id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="140" anim="none" href="home.action"></a><![CDATA[Voltar ao Site]]>
 	                </box>
                 </box>
             </fb>
@@ -847,7 +846,6 @@
 	                    <text id="fail_txt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none"><![CDATA[<p class="p_32 white glow">Tem que estudar mais..! Acertô [passed] de [total]</p>]]></text>
 	                        
 						<button id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="120" anim="none" animtime="0.5" event="btnover,restart,hidefailbg"><![CDATA[De novo!]]></button>
-						<a id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="140" anim="none" href="home.action"></a><![CDATA[Voltar ao Site]]>
 	                </box> 
                 </box> 
             </fb>
@@ -859,7 +857,6 @@
 	                    <text id="fail_txt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none"><![CDATA[<p class="p_32 white glow">Resultado:  [score]%</p>]]></text>
 	                        
 						<button id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="120" anim="none" animtime="0.5" event="btnover,restart,hidefailbg"><![CDATA[De novo!]]></button>
-						<a id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="140" anim="none" href="home.action"></a><![CDATA[Voltar ao Site]]>
 	                </box> 
                 </box> 
             </fb>
@@ -871,7 +868,6 @@
 	                    <text id="fail_txt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none"><![CDATA[<p class="p_32 white glow">Resultado:  [score]%</p>]]></text>
 	                        
 						<button id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="120" anim="none" animtime="0.5" event="btnover,restart,hidefailbg"><![CDATA[De novo!]]></button>
-						<a id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="140" anim="none" href="home.action"></a><![CDATA[Voltar ao Site]]>
 	                </box> 
                 </box> 
             </fb>
@@ -883,7 +879,6 @@
 	                    <text id="fail_txt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none"><![CDATA[<p class="p_32 white glow">Resultado:  [score]%</p>]]></text>
 	                        
 						<button id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="120" anim="none" animtime="0.5" event="btnover,restart,hidefailbg"><![CDATA[De novo!]]></button>
-						<a id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="140" anim="none" href="home.action"></a><![CDATA[Voltar ao Site]]>
 	                </box> 
                 </box> 
             </fb>
@@ -895,7 +890,6 @@
 	                    <text id="fail_txt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none"><![CDATA[<p class="p_32 white glow">Resultado:  [score]%</p>]]></text>
 	                        
 						<button id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="120" anim="none" animtime="0.5" event="btnover,restart,hidefailbg"><![CDATA[De novo!]]></button>
-						<a id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="140" anim="none" href="home.action"></a><![CDATA[Voltar ao Site]]>
 	                </box> 
                 </box> 
             </fb>
@@ -907,7 +901,6 @@
 	                    <text id="fail_txt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none"><![CDATA[<p class="p_32 white glow">Resultado:  [score]%</p>]]></text>
 	                        
 						<button id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="120" anim="none" animtime="0.5" event="btnover,restart,hidefailbg"><![CDATA[De novo!]]></button>
-						<a id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="140" anim="none" href="home.action"></a><![CDATA[Voltar ao Site]]>
 	                </box> 
                 </box> 
             </fb>

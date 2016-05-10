@@ -5,8 +5,6 @@
 <jsp:directive.include file="import.jsp"/>
 </head> 
 <body>
-		<input type="hidden" name="userId" value="${userId}" />
-		<input type="hidden" name="userName" value="${userName}" />
 <jsp:directive.include file="header.jsp"/>   
     <!-- Carousel
     ================================================== -->
@@ -68,7 +66,7 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">Bem Vindo, <span class="text-muted" id="rosa"><c:out value="${name}"/></span></h2>
+          <h2 class="featurette-heading">Bem Vindo, <span class="text-muted" id="rosa"><s:property value="#session.name"/> </span></h2>
           <p class="lead">Criamos essa plataforma para estar mais perto dos convidados nessa contagem regressiva. Estamos muitos ansiosos e sabemos que vai sair tudo lindo.</p>
         </div>
         <div class="col-md-5">

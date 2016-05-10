@@ -22,10 +22,10 @@
 	      	<s:form cssClass="form-signin" action="login.action">
 		        <h2 class="form-signin-heading">Entrar</h2>
 		        <label for="inputEmail" class="sr-only">E-mail</label>
-		        <input type="email" name="mail" id="inputEmail" class="form-control" placeholder="E-mail" required autofocus>
+		        <input type="email" name="user.mail" id="inputEmail" class="form-control" placeholder="E-mail" required autofocus>
 		        <label for="inputPassword" class="sr-only">Senha</label>
-		        <input type="password"  name="password" id="inputPassword" class="form-control" placeholder="Password" required>
-		        <button class="btn btn-lg btn-block" type="submit">Entrar</button>
+		        <input type="password"  name="user.password" id="inputPassword" class="form-control" placeholder="Password" required>
+		        <button class="btn btn-lg btn-block" type="submit">Log in</button>
 		        <br>
 		       	<div class="first">
 			        <a class="text-left" href="preAddUser.action">Primeira vez?</a>

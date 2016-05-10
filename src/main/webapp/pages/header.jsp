@@ -1,4 +1,5 @@
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:if test="${session.userId > 0}">
 		<div class="navbar-wrapper">
 	      <div class="container">
 	        <nav class="navbar navbar-inverse navbar-static-top">
@@ -25,4 +26,6 @@
 	        </nav>
 	      </div>
 	    </div>
+
+</c:if>
 	

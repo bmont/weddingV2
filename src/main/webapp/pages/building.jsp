@@ -6,8 +6,6 @@
 
 </head> 
 <body>
-		<input type="hidden" name="userId" value="${userId}" />
-		<input type="hidden" name="userName" value="${userName}" />
 <jsp:directive.include file="header.jsp"/>   
     <div class="container marketing">
 
@@ -24,7 +22,9 @@
 	        </div>
 <!--         <p><a class="btn btn-default"  href="home.action" role="button">Voltar;</a></p> -->
       </div>
+      <div id="copyright" class="col-md-12">
 		<jsp:directive.include file="footer.jsp"/>
+      </div>
 
       <!-- FOOTER -->
     </div>

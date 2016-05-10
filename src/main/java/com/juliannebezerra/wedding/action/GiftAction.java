@@ -9,9 +9,9 @@ import com.juliannebezerra.wedding.model.Gift;
 import com.juliannebezerra.wedding.model.User;
 import com.opensymphony.xwork2.ModelDriven;
 
-public class GiftAction implements ModelDriven<Gift>{
+public class GiftAction {
 
-	Gift gift = new Gift();
+	Gift gift;
 	List<Gift> giftList = new ArrayList<Gift>();
 	
 	int userId;
@@ -52,11 +52,11 @@ public class GiftAction implements ModelDriven<Gift>{
 		this.userId = userId;
 	}
 
-	@Override
-	public Gift getModel() {
-		return gift;
-	}
-	
+//	@Override
+//	public Gift getModel() {
+//		return gift;
+//	}
+//	
 	public List<Gift> getGiftList() {
 		return giftList;
 	}
@@ -66,8 +66,6 @@ public class GiftAction implements ModelDriven<Gift>{
 	}
 
 	public String listGifts() {
-		System.out.println(getUserId());
-		System.out.println(getUserName());
 		giftList = giftBo.listGifts();
 		return "giftListed";
 	}
@@ -99,4 +97,13 @@ public class GiftAction implements ModelDriven<Gift>{
 	public String loadFotos(){
 		return "success";
 	}
+
+	public Gift getGift() {
+		return gift;
+	}
+
+	public void setGift(Gift gift) {
+		this.gift = gift;
+	}
+	
 }

@@ -23,30 +23,31 @@ body{font-family: 'Roboto Condensed', sans-serif;background:transparent;color:#4
 h1{font-size:34px;color: #4b4b40;margin-bottom: 30px;}
 h2{font-size:34px;color: #f2b115;margin-bottom: 30px;}
 div, p, a, li, td { -webkit-text-size-adjust:none; }
-p{font-size:14px;line-height:21px;margin-bottom:12px;color:#4b4b40;}
+p{font-size:14px;line-height:21px;margin-bottom:12px;color:#ed7280;font-weight: bold;}
 p:last-child{margin-bottom:0px;}
 input{background:#4b4b40;font-size:14px;font-weight:bold;color:#fff;padding:6px 10px 6px 10px;border:none;-webkit-appearance:none;border-radius:0px; -moz-border-radius:0px;font-family: 'Roboto Condensed', sans-serif;}
 img{display:block;} /* remove bottom padding */ 
 
-.passbg{background:transparent url("../assets/nasa_pass.jpg") no-repeat; 
+.passbg{background:transparent url("../assets/car.gif") no-repeat; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 
-.failbg{background:transparent url("../assets/nasa_fail.jpg") no-repeat; 
+.failbg{background:transparent url("../assets/jon.gif") no-repeat; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 
-.timesupbg{background:transparent url("../assets/nasa_timesup.jpg") no-repeat; 
+.timesupbg{background:transparent url("../assets/not.gif") no-repeat; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  
 }
 
 .orangebg{background:rgba(253, 199, 70, 1);}
@@ -168,4 +169,3 @@ img{display:block;} /* remove bottom padding */
     from {-webkit-transform: rotate(0deg);}
     to {-webkit-transform: rotate(360deg);}
 }
-

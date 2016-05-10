@@ -23,10 +23,10 @@
 
 
           <div class="inner cover">
-            <h1 class="cover-heading">Ainda não foi convidado?</h1>
-            <p class="lead">Espera que já chega.</p>
+            <h1 class="cover-heading">Alguma coisa ta errada...</h1>
+            <p class="lead" id="rosa">Quer falar com a gente?.</p>
             <p class="lead">
-              <a href="initMensagemSin.action" id="voltar" class="btn btn-lg btn-default">Mande uma mensagem.</a>
+              <a href="initMensagem.action" id="voltar" class="btn btn-lg btn-default">Mande uma mensagem.</a>
             </p>
           </div>
 			

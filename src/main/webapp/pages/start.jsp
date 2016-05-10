@@ -76,7 +76,7 @@
 		      <p class="text2">Recebeu nosso convite?</p>
 		      <p class="text2">
 		        <a href="preLogin.action" class="btn btn-lg btn-primary">Sim, já contando os dias.</a>
-		        <a href="preLoginFailed.action" class="btn btn-lg btn-danger">Não chegou ainda.</a>
+		        <a href="notInvited.action" class="btn btn-lg btn-danger">Não chegou ainda.</a>
 		      </p>
 	      </div>
 	    </div>

@@ -7,20 +7,32 @@
  	<constant name="struts.devMode" value="false" />
  	
 	<package name="default" namespace="/" extends="struts-default">
+
+		<action name=""
+			class="userAction" method="success" >
+		    <result name="success">pages/start.jsp</result>
+		</action>
+	
+		<action name="preLogin"
+			class="userAction" method="success" >
+		    <result name="success">pages/login.jsp</result>
+		</action>	
+	
+		<action name="login"
+			class="userAction" method="login" >
+		    <result name="success">pages/home.jsp</result>
+		    <result name="login">pages/login.jsp</result>
+		</action>
+		
+		<action name="preAddUser"
+			class="userAction" method="success" >
+		    <result name="success">pages/user.jsp</result>
+		</action>
 		
 		<action name="addUser" 
 			class="userAction" method="addUser" >
 		    <result name="success">pages/home.jsp</result>
-		</action>
-
-		<action name="" 
-			class="userAction" method="home" >
-		    <result name="success">pages/start.jsp</result>
-		</action>
-	
-		<action name="preAddUser"
-			class="userAction" method="preAddUser" >
-		    <result name="success">pages/user.jsp</result>
+		    <result name="login">pages/login.jsp</result>
 		</action>
 
 		<action name="pickGift"
@@ -32,26 +44,17 @@
 		<action name="home"
 			class="userAction" method="home" >
 		    <result name="success">pages/home.jsp</result>
+		    <result name="login">pages/login.jsp</result>
 		</action>
 
-		<action name="start"
-			class="userAction" method="home" >
-		    <result name="success">pages/start.jsp</result>
+		<action name="initMensagem"
+			class="userAction" method="success" >
+		    <result name="success">pages/mensagem.jsp</result>
 		</action>
-
-		<action name="login"
-			class="userAction" method="login" >
+		
+		<action name="mensagem"
+			class="questionAction" method="add" >
 		    <result name="success">pages/home.jsp</result>
-		    <result name="failed">pages/failed.jsp</result>
-		</action>
-
-		<action name="preLogin"
-			class="userAction" method="preLogin" >
-		    <result name="success">pages/login.jsp</result>
-		</action>
-		<action name="preLoginFailed"
-			class="userAction" method="preLoginFailed" >
-		    <result name="failed">pages/failed.jsp</result>
 		</action>
 
 		<action name="gift"
@@ -60,13 +63,9 @@
 		    <result name="failed">pages/failed.jsp</result>
 		</action>
 
-		<action name="loadFotos"
-			class="userAction" method="home" >
-		    <result name="success">pages/foto.jsp</result>
-		</action>
 		<action name="quiz"
 			class="userAction" method="home" >
-		    <result name="success">pages/quiz/quiz.html</result>
+		    <result name="success">pages/quiz/quiz.jsp</result>
 		</action>
 		<action name="building"
 			class="userAction" method="home" >
@@ -80,17 +79,9 @@
 			class="userAction" method="excluir" >
 		    <result name="success">pages/start.jsp</result>
 		</action>
-		<action name="initMensagem"
-			class="questionAction" method="home" >
-		    <result name="success">pages/mensagem.jsp</result>
-		</action>
-		<action name="initMensagemSin"
-			class="questionAction" method="home" >
-		    <result name="success">pages/mensagemNoivos.jsp</result>
-		</action>
-		<action name="mensagem"
-			class="questionAction" method="add" >
-		    <result name="success">pages/mensagem.jsp</result>
+		<action name="notInvited"
+			class="userAction" method="success" >
+		    <result name="success">pages/failed.jsp</result>
 		</action>
 
 		<action name="logout"

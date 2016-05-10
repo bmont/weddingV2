@@ -9,9 +9,6 @@
 </head>
 <body>
     <script src="js/bootbox.min.js"></script>
-	<input type="hidden" name="userId" value="${userId}" />
-<%-- 	<c:if test="${userId > 0 }"> --%>
-<%-- 	</c:if> --%>
 		<jsp:directive.include file="header.jsp"/>   
     <div class="container container-msg">
 
@@ -24,8 +21,9 @@
         </div>
       </div>
         
-         <form id="defaultForm" class="form-horizontal" action="home.action">
-         <textarea id="textarea" name="msg"></textarea>
+         <form id="defaultForm" class="form-horizontal" action="mensagem.action">
+         <textarea id="textarea" name="question.msg"></textarea>
+         <input type="hidden" name="question.userId" value="${session.userId}"/>
          <br><br>
         <button type="submit" id="but" class="btn btn-block">Enviar</button>
 			<br><br><br><%@ include file="footer.jsp" %>

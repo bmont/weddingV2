@@ -6,8 +6,6 @@
 
 </head> 
 <body>
-		<input type="hidden" name="userId" value="${userId}" />
-		<input type="hidden" name="userName" value="${userName}" />
 <jsp:directive.include file="header.jsp"/>   
     <div class="container marketing">
 

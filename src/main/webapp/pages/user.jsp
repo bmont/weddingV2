@@ -31,10 +31,10 @@
 	                    <div class="form-group">
 	                        <label class="col-lg-3 control-label">Nome</label>
 	                        <div class="col-lg-4">
-	                            <input type="text" class="form-control" name="name" placeholder="Nome" required data-fv-notempty-message="Este campo não pode estar vazio" />
+	                            <input type="text" class="form-control" name="user.name" placeholder="Nome" required data-fv-notempty-message="Este campo não pode estar vazio" />
 	                        </div>
                         <div class="col-lg-4">
-                            <input type="text" class="form-control" name="lastName" placeholder="Sobrenome" required data-fv-notempty-message="Este campo não pode estar vazio" />
+                            <input type="text" class="form-control" name="user.lastName" placeholder="Sobrenome" required data-fv-notempty-message="Este campo não pode estar vazio" />
                         </div>
 	                    </div>
 	
@@ -53,20 +53,20 @@
 	                    <div class="form-group">
 	                        <label class="col-lg-3 control-label">Email</label>
 	                        <div class="col-lg-5">
-	                            <input class="form-control" name="mail" type="email" data-fv-emailaddress-message="Email não é válido" />
+	                            <input class="form-control" name="user.mail" type="email" data-fv-emailaddress-message="Email não é válido" />
 	                        </div>
 	                    </div>
 	                    <div class="form-group">
 	                        <label class="col-lg-3 control-label">Telefone</label>
 	                        <div class="col-lg-5">
-	                            <input class="form-control" name="fone" type="text" data-fv-emailaddress-message="Telefone não é válido" />
+	                            <input class="form-control" name="user.fone" type="text" data-fv-emailaddress-message="Telefone não é válido" />
 	                        </div>
 	                    </div>
 	
 	                    <div class="form-group">
 	                        <label class="col-lg-3 control-label">Senha</label>
 	                        <div class="col-lg-5">
-	                            <input type="password" class="form-control" name="password"
+	                            <input type="password" class="form-control" name="user.password"
 	                                   required data-fv-notempty-message="Este campo não pode estar vazio"
 	                                   data-fv-different="true" data-fv-different-field="username" data-fv-different-message="The password cannot be the same as username" />
 	                        </div>
@@ -86,17 +86,17 @@
 	                        <div class="col-lg-5">
 	                            <div class="radio">
 	                                <label>
-	                                    <input type="radio" name="gender" value="H" required data-fv-notempty-message="Escolha um sexo" /> Homem
+	                                    <input type="radio" name="user.gender" value="H" required data-fv-notempty-message="Escolha um sexo" /> Homem
 	                                </label>
 	                            </div>
 	                            <div class="radio">
 	                                <label>
-	                                    <input type="radio" name="gender" value="M" /> Mulher
+	                                    <input type="radio" name="user.gender" value="M" /> Mulher
 	                                </label>
 	                            </div>
 	                            <div class="radio">
 	                                <label>
-	                                    <input type="radio" name="gender" value="I" /> Ainda tô decidindo...
+	                                    <input type="radio" name="user.gender" value="I" /> Ainda tô decidindo...
 	                                </label>
 	                            </div>
 	                        </div>
