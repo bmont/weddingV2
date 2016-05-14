@@ -23,6 +23,15 @@
         
          <form id="defaultForm" class="form-horizontal" action="mensagem.action">
          <textarea id="textarea" name="question.msg"></textarea>
+         
+         <c:if test="${session.userId == null || session.userId == 0 }">
+         <div class="form-group"><br>
+	                        <label class="col-lg-2 control-label">Email:<i> (Opcional)</i> </label>
+	                        <div class="col-lg-9">
+	                            <input class="form-control" name="question.email"  />
+	                        </div>
+	                    </div>
+         </c:if>
          <input type="hidden" name="question.userId" value="${session.userId}"/>
          <br><br>
         <button type="submit" id="but" class="btn btn-block">Enviar</button>

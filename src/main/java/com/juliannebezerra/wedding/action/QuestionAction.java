@@ -1,6 +1,7 @@
 package com.juliannebezerra.wedding.action;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.juliannebezerra.wedding.bo.QuestionBo;
@@ -51,6 +52,10 @@ public class QuestionAction  {
 
 	public String add(){
 		if(question.getMsg()!=null){
+			question.setCreateDate(new Date());
+			if(question.getUserId()!=null && question.getUserId()> 0){
+				question.setEmail("USER LOGGED");
+			}
 			questionBo.add(question);
 		}
 		return "success";

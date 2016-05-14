@@ -14,5 +14,11 @@
         <property name="userId" type="java.lang.Long">
             <column name="USER" length="100" not-null="false" />
         </property>
+             <property name="email" type="string">
+        	 <column name="MAIL" not-null="false" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="CREATED_DATE" length="19" not-null="false" />
+        </property>
     </class>
 </hibernate-mapping>

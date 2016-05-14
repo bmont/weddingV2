@@ -1,5 +1,7 @@
 package com.juliannebezerra.wedding.model;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,6 +19,10 @@ public class Question {
 	private String msg;
 	
 	private Long userId;
+	
+	private String email;
+	
+	private Date createDate;
 
 	public Long getId() {
 		return id;
@@ -40,6 +46,23 @@ public class Question {
 
 	public void setUserId(Long userId) {
 		this.userId = userId;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Date getCreateDate() {
+		return createDate;
+	}
+
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
 	}
 	
 	

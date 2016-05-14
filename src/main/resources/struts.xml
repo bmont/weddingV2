@@ -54,7 +54,7 @@
 		
 		<action name="mensagem"
 			class="questionAction" method="add" >
-		    <result name="success">pages/home.jsp</result>
+		    <result name="success">pages/mensagem.jsp</result>
 		</action>
 
 		<action name="gift"
